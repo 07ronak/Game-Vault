@@ -11,8 +11,9 @@ function App() {
   //const [selectedGenre, setSelectedGenre] = useState(null);
   //const [selectedPlatform, setSelectedPlatform] = useState(null);
   const [gameQuery, setGameQuery] = useState({
-    genre: "",
-    platform: "",
+    genre: null,
+    platform: null,
+    sortOrder: null,
   });
   return (
     <>
@@ -45,7 +46,12 @@ function App() {
               }
               selectedPlatform={gameQuery.platform}
             />
-            <SortSelector />
+            <SortSelector
+              sortOrder={gameQuery.sortOrder}
+              onSelectSortOrder={(sortOrder) =>
+                setGameQuery({ ...gameQuery, sortOrder })
+              }
+            />
           </HStack>
           <GameGrid gameQuery={gameQuery} />
         </GridItem>
