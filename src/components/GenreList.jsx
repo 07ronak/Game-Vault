@@ -19,7 +19,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }) => {
 
   return (
     <>
-      <Heading fontSize="2xl" marginBottom={2}>
+      <Heading fontSize="2xl" marginBottom={3} marginTop={3}>
         Genres
       </Heading>
       <List>
